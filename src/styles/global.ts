@@ -12,6 +12,7 @@ export const GlobalStyle = createGlobalStyle`
     
     --grey:#969cb3;
     --grey-50:#E6E6E6;
+    --grey-100:#666666;
 
     --yellow-500: #eba417;
 
@@ -24,6 +25,7 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
 }
 
 html {

@@ -2,7 +2,7 @@
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 
 import Image from "next/image"
-import imgSlider from "../../assets/banner01.jpg"
+import imgSlider from "../../../assets/slider/banner01.jpg"
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -33,6 +33,12 @@ export function Slider (){
                 style={{width: '100%', flex: '1'}}
             >
 
+                <SwiperSlide>
+                    <ContainerSlider>
+                        <Image src={imgSlider} alt="img"/>
+                    </ContainerSlider>
+                </SwiperSlide>
+                
                 <SwiperSlide>
                     <ContainerSlider>
                         <Image src={imgSlider} alt="img"/>
