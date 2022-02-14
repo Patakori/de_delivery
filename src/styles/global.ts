@@ -72,7 +72,7 @@ button {
 
     //cor das setas
     .swiper-button-prev:after, .swiper-button-next:after{
-        color: #FFBA08;
+        color: #eba417;
     }
   
     //bolinhas de página
@@ -85,7 +85,7 @@ button {
   
     //cor da bolinha ativa
     .swiper-pagination-bullet-active{
-        background:#FFBA08 ;
+        background:#eba417 ;
     }
   
   //@media(max-width:30em) {

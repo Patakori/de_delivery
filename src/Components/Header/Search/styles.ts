@@ -10,6 +10,11 @@ export const Container = styled.div`
     
     margin-top: 16px;
 
+    @media (min-width: 1160px) {
+        margin-top: 0px;
+        margin-left: 22px;
+    }
+
 
 
     button {
@@ -46,6 +51,9 @@ export const Container = styled.div`
             color: var(--grey);
         }
         
+        @media (min-width: 1300px) {
+        width: 538px;
+    }
     }
 
 `

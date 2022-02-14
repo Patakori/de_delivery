@@ -7,4 +7,14 @@ export const Container = styled.div`
     grid-column-gap: 6px;
 
     margin: 26px 17px;
+
+    @media (min-width: 1160px) {
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+    }
+
+    
 `

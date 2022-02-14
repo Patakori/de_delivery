@@ -16,6 +16,12 @@ export const Container = styled.div`
         border-radius:9px;
         border: solid var(--white-50);
         border-width: 2px;
+
+        @media (min-width: 1160px) {
+
+            width: 189px;
+
+        }
         
     }
 

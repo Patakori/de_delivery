@@ -10,6 +10,10 @@ export const Container = styled.div`
     margin-top: 26px;
 
     background: var(--black);
+
+    @media (min-width: 1160px) {
+        margin-top: 0px;
+    }
     
 `
 export const IconsJoin = styled.div`

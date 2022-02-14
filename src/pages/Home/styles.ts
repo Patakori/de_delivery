@@ -4,10 +4,18 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
 
+    align-items: center;
+
     row-gap: 10px;
 
-    width: 100%;
     height: 100%;
+
+    @media (min-width: 1100px) {
+        width: 100%;
+
+
+        
+    }
     
 `
 
@@ -24,7 +32,14 @@ export const ContainerNews = styled.div`
     margin: 14px 15px;
     border-radius: 8px;
 
-    span{
+    @media (min-width: 1100px) {
+        width: 574px;
+
+        
+    }
+
+
+    >span{
         display: flex;
         
         width: 60px;
@@ -34,18 +49,18 @@ export const ContainerNews = styled.div`
         
     }
 
-    div{
+    >div{
         display: flex;
         flex-direction: column;
         justify-content: center;
 
         margin-right: 30px;
 
-        h1{
+        >h1{
             font-size: 0.875rem;
         }
 
-        p{
+        >p{
             font-size: 0.75rem;
         }
     }

@@ -16,6 +16,10 @@ export const Container = styled.div`
 
     box-shadow: 2px 3px 5px var(--grey);
 
+    @media (min-width: 900px) {
+        width: 184px;
+    }
+
 
 `
 export const BoxImg = styled.div`

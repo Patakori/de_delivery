@@ -1,6 +1,6 @@
 import { Card } from "./Card";
 
-import { Container, ContainerCard, ButtonArrow,CardBox, Info, BoxImg } from "./styles";
+import { Container, ContainerCard, ButtonArrow } from "./styles";
 
 import { HiArrowRight } from "react-icons/hi"
 

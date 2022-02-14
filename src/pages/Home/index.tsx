@@ -15,7 +15,7 @@ import { Card } from "../../Components/Categorys/Card";
 import { Highlights } from "./Highlights";
 import { CardHighlights } from "./Highlights/CardHighlights";
 
-import b01 from "../../assets/beats/01.jpg"
+import b01 from "../../assets/beats/beats.jpg"
 import pop01 from "../../assets/populares/01.jpg"
 import ImgNews from "../../assets/news/product-illustration_alert.png"
 import high01 from "../../assets/highlights/01.jpg"
@@ -57,10 +57,6 @@ export default function Home() {
         value="5,29"
         />
 
-        <Card  img={<Image src={pop01} alt="img" width={100}  height={100}/>}
-        product="Beats Senses 269ml"
-        value="5,29"
-        />
 
       </Categorys>
 
@@ -106,17 +102,6 @@ export default function Home() {
            value="2,39"
         />
 
-        <Card  
-           img={<Image src={b01} alt="img" width={100} height={100}/>}
-           product="Skol 269ml"
-           value="2,39"
-        />
-
-        <Card  
-           img={<Image src={b01} alt="img" width={100} height={100}/>}
-           product="Skol 269ml"
-           value="2,39"
-        />
 
       </Categorys>
       
