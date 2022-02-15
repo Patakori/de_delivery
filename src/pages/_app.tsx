@@ -4,7 +4,12 @@ import { GlobalStyle } from '../styles/global'
 
 import 'swiper/css';
 
+import { Data } from"../data/server"
+
+
 function MyApp({ Component, pageProps }: AppProps) {
+
+  const data = Data()
   return (
     <>
       <GlobalStyle />
