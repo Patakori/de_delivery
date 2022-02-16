@@ -16,50 +16,82 @@ import { Categorys } from "../../Components/Categorys";
 import { Card } from "../../Components/Categorys/Card";
 import { Highlights } from "./Highlights";
 import { CardHighlights } from "./Highlights/CardHighlights";
+import { Footer } from "../../Components/Footer";
 
-import b01 from "../../assets/beats/beats.jpg"
-import pop01 from "../../assets/populares/01.jpg"
 import ImgNews from "../../assets/news/product-illustration_alert.png"
 import high01 from "../../assets/highlights/01.jpg"
-import { Footer } from "../../Components/Footer";
+
 
 interface PropsData {
   category: string,
-  products: {
-    id: number,
-    price: string,
-    name: string,
-    image?: any,
-  }
+  products: [],
 }
 
 interface PropsProducts {
-  id: number,
-  price: string,
-  name: string,
-  image?: any,
+    id: string,
+    price: string,
+    name: string,
+    image?: any,
 }[]
 
 export default function Home() {
 
 
   const [data, setData] = useState <PropsData[]>([])
-  const [populares, setPopulares] = useState({})
+  const [populares, setPopulares] = useState<PropsProducts[]>([])
   const [beats, setBeats] = useState<PropsProducts[]>([])
+  const [retornaveis, setRetornaveis] = useState<PropsProducts[]>([])
+  const [loader, setLoader] = useState(false)
+
+
+  function popularesData(){
+    return data.filter(function(data){
+        return data.category === "populares"
+      }).map((data) => {
+        return setPopulares(data.products)
+      })      
+  }
+  
+  function beatsData(){
+    return data.filter(function(data){
+      return data.category === "beats"
+    }).map((data) => {
+      return setBeats(data.products)
+    })
+  }
+  
+
+  function retornaveisData(){
+    return data.filter(function(data){
+      return data.category === "retornaveis"
+    }).map((data) => {
+      return setRetornaveis(data.products)
+    })
+  }
 
   useEffect(()=>{
     fetch('http://localhost:3000/api/products')
     .then(response => response.json())
-    .then(data => setData(data.data))
+    .then(data => setData(data.data)); 
 
   },[])
 
-  function popularesData(){
-    return data.filter(function(data){
-      return data.category === "populares"
-    })
-  }
+  useEffect(()=>{
 
+    try {
+      setLoader(true);
+      popularesData();
+      beatsData();
+      retornaveisData();
+  
+    } finally {
+      setLoader(false);
+    }
+
+
+  },[data])
+
+  console.log(data)
 
   return (
     <Container>
@@ -71,16 +103,16 @@ export default function Home() {
       <Categorys category="POPULARES"> 
 
         {
-          data.map((data, id)=>{
-            return(
-              <Card  
-                  key={id} 
-                  img={'<Image src={data.products.image} alt="img" width={100}  height={100}/>'}
-                  product={''}
-                  value={''}
-              />
-            )
-          })
+         loader ? <p>carregando</p> : populares.slice(0, 5).map(({name, id, image, price}:PropsProducts)=>{
+          return(
+            <Card  
+                key={id} 
+                img={<Image src={image} alt="img" width={100}  height={100}/>}
+                product={name}
+                value={price}
+            />
+          )
+        })
         }
 
       </Categorys>
@@ -97,25 +129,72 @@ export default function Home() {
 
       <Categorys category="PLANO B DE BEATS"> 
 
+        {
+            beats.map(({name, id, image, price}:PropsProducts)=>{
+              return(
+                <Card  
+                    key={id} 
+                    img={<Image src={image} alt="img" width={100}  height={100}/>}
+                    product={name}
+                    value={price}
+                />
+              )
+            })
+          }
+
 
       </Categorys>
       
       <Categorys category="RETORNÁVEIS"> 
+
+        {
+          retornaveis.map(({name, id, image, price}:PropsProducts)=>{
+            return(
+              <Card  
+                  key={id} 
+                  img={<Image src={image} alt="img" width={100}  height={100}/>}
+                  product={name}
+                  value={price}
+              />
+            )
+          })
+        }
 
       </Categorys>
 
       <Highlights category="DESTAQUES">
 
         <CardHighlights
-            img={<Image src={high01} alt="img"  layout="fixed" objectFit="contain" />}
+            img={<Image src='https://courier-images-prod.imgix.net/mini_banner/beats-150-bpm-by-anitta-2.jpg?auto=compress,format&fit=max&w=undefined&h=undefined&dpr=2' 
+            alt="img"  
+            width={700}  
+            height={120}
+            layout="fixed"            
+            objectFit="fill"
+            objectPosition='container'
+            />}
           />
 
         <CardHighlights
-            img={<Image src={high01} alt="img"  layout="fixed" objectFit="contain" />}
+            img={<Image src='https://courier-images-prod.imgix.net/mini_banner/vinhos-suaves.jpg?auto=compress,format&fit=max&w=undefined&h=undefined&dpr=2' 
+            alt="img"  
+            width={700}  
+            height={120}
+            layout="fixed"            
+            objectFit="fill"
+            objectPosition='container'
+            />}
           />
 
         <CardHighlights
-            img={<Image src={high01} alt="img"  layout="fixed" objectFit="contain" />}
+            img={<Image src='https://courier-images-prod.imgix.net/mini_banner/verao-com-cheetos.jpg?auto=compress,format&fit=max&w=undefined&h=undefined&dpr=2' 
+            alt="img"  
+            width={700}  
+            height={120}
+            layout="fixed"            
+            objectFit="fill"
+            objectPosition='container'
+            />}
           />
 
       </Highlights>

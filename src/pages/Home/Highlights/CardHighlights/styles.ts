@@ -21,6 +21,7 @@ export const Container = styled.div`
     box-shadow: 2px 3px 5px var(--grey);
     overflow: hidden;
 
+
     @media (min-width: 900px) {
         
         width: 360px; 

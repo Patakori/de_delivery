@@ -6,7 +6,7 @@ export const Container = styled.div`
     
 
     width: 100%;
-    height: 175px;
+    height: 180px;
 
     background: var(--white);
 
