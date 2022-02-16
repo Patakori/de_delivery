@@ -23,25 +23,43 @@ import ImgNews from "../../assets/news/product-illustration_alert.png"
 import high01 from "../../assets/highlights/01.jpg"
 import { Footer } from "../../Components/Footer";
 
+interface PropsData {
+  category: string,
+  products: {
+    id: number,
+    price: string,
+    name: string,
+    image?: any,
+  }
+}
+
 interface PropsProducts {
   id: number,
-  category: string,
   price: string,
   name: string,
   image?: any,
-}
+}[]
 
 export default function Home() {
 
 
-  const [products, setProducts] = useState<PropsProducts[]>([])
+  const [data, setData] = useState <PropsData[]>([])
+  const [populares, setPopulares] = useState({})
+  const [beats, setBeats] = useState<PropsProducts[]>([])
 
   useEffect(()=>{
     fetch('http://localhost:3000/api/products')
     .then(response => response.json())
-    .then(data => setProducts(data.products))
+    .then(data => setData(data.data))
 
   },[])
+
+  function popularesData(){
+    return data.filter(function(data){
+      return data.category === "populares"
+    })
+  }
+
 
   return (
     <Container>
@@ -53,13 +71,13 @@ export default function Home() {
       <Categorys category="POPULARES"> 
 
         {
-          products.slice(0, 5).map((products, id)=>{
+          data.map((data, id)=>{
             return(
               <Card  
                   key={id} 
-                  img={<Image src={products.image} alt="img" width={100}  height={100}/>}
-                  product={products.name}
-                  value={products.price}
+                  img={'<Image src={data.products.image} alt="img" width={100}  height={100}/>'}
+                  product={''}
+                  value={''}
               />
             )
           })
@@ -79,34 +97,11 @@ export default function Home() {
 
       <Categorys category="PLANO B DE BEATS"> 
 
-        {
-          products.slice(0, 5).map((products, id)=>{
-            return(
-              <Card  
-                  key={id} 
-                  img={<Image src={products.image} alt="img" width={100}  height={100}/>}
-                  product={products.name}
-                  value={products.price}
-              />
-            )
-          })
-        }
 
       </Categorys>
       
       <Categorys category="RETORNÁVEIS"> 
-        {
-          products.slice(0, 5).map((products, id)=>{
-            return(
-              <Card  
-                  key={id} 
-                  img={<Image src={products.image} alt="img" width={100}  height={100}/>}
-                  product={products.name}
-                  value={products.price}
-              />
-            )
-          })
-        }
+
       </Categorys>
 
       <Highlights category="DESTAQUES">
@@ -126,93 +121,27 @@ export default function Home() {
       </Highlights>
 
       <Categorys category="CERVEJAS"> 
-        {
-          products.slice(0, 5).map((products, id)=>{
-            return(
-              <Card  
-                  key={id} 
-                  img={<Image src={products.image} alt="img" width={100}  height={100}/>}
-                  product={products.name}
-                  value={products.price}
-              />
-            )
-          })
-        }
+
       </Categorys>
 
       <Categorys category="DESTILADOS"> 
-        {
-          products.slice(0, 5).map((products, id)=>{
-            return(
-              <Card  
-                  key={id} 
-                  img={<Image src={products.image} alt="img" width={100}  height={100}/>}
-                  product={products.name}
-                  value={products.price}
-              />
-            )
-          })
-        }
+
       </Categorys>
 
       <Categorys category="VINHO"> 
-        {
-          products.slice(0, 5).map((products, id)=>{
-            return(
-              <Card  
-                  key={id} 
-                  img={<Image src={products.image} alt="img" width={100}  height={100}/>}
-                  product={products.name}
-                  value={products.price}
-              />
-            )
-          })
-        }
+
       </Categorys>
 
       <Categorys category="SEM ÁLCOOL"> 
-        {
-          products.slice(0, 5).map((products, id)=>{
-            return(
-              <Card  
-                  key={id} 
-                  img={<Image src={products.image} alt="img" width={100}  height={100}/>}
-                  product={products.name}
-                  value={products.price}
-              />
-            )
-          })
-        }
+
       </Categorys>
 
       <Categorys category="LOJINHA"> 
-        {
-          products.slice(0, 5).map((products, id)=>{
-            return(
-              <Card  
-                  key={id} 
-                  img={<Image src={products.image} alt="img" width={100}  height={100}/>}
-                  product={products.name}
-                  value={products.price}
-              />
-            )
-          })
-        }
+
       </Categorys>
 
       <Categorys category="COMIDINHA"> 
-        {
-          products.slice(0, 5).map((products, id)=>{
-            return(
-              <Card  
-                  key={id} 
-                  img={<Image src={products.image} alt="img" width={100}  height={100}/>}
-                  product={products.name}
-                  value={products.price}
-              />
-            )
-          })
-        }
+
       </Categorys>
 
       <ContainerButton>
