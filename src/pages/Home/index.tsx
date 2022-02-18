@@ -19,7 +19,7 @@ import { CardHighlights } from "./Highlights/CardHighlights";
 import { Footer } from "../../Components/Footer";
 
 import ImgNews from "../../assets/news/product-illustration_alert.png"
-import high01 from "../../assets/highlights/01.jpg"
+
 
 
 interface PropsData {
@@ -36,62 +36,48 @@ interface PropsProducts {
 
 export default function Home() {
 
-
-  const [data, setData] = useState <PropsData[]>([])
   const [populares, setPopulares] = useState<PropsProducts[]>([])
   const [beats, setBeats] = useState<PropsProducts[]>([])
   const [retornaveis, setRetornaveis] = useState<PropsProducts[]>([])
   const [loader, setLoader] = useState(false)
 
-
-  function popularesData(){
-    return data.filter(function(data){
-        return data.category === "populares"
-      }).map((data) => {
-        return setPopulares(data.products)
-      })      
-  }
-  
-  function beatsData(){
-    return data.filter(function(data){
-      return data.category === "beats"
-    }).map((data) => {
-      return setBeats(data.products)
-    })
-  }
-  
-
-  function retornaveisData(){
-    return data.filter(function(data){
-      return data.category === "retornaveis"
-    }).map((data) => {
-      return setRetornaveis(data.products)
-    })
-  }
-
-  useEffect(()=>{
+  async function popularesData(){
     fetch('http://localhost:3000/api/products')
     .then(response => response.json())
-    .then(data => setData(data.data)); 
+    .then(data => data.data.filter(function(data:any){
+      return data.category === "populares"
+    }).map((data:any) => {
+      return setPopulares(data.products)
+    }));       
+  }
+  
+  async function beatsData(){
+    fetch('http://localhost:3000/api/products')
+    .then(response => response.json())
+    .then(data => data.data.filter(function(data:any){
+      return data.category === "beats"
+    }).map((data:any) => {
+      return setBeats(data.products)
+    }));  
+  }
 
-  },[])
+  async function retornaveisData(){
+    fetch('http://localhost:3000/api/products')
+    .then(response => response.json())
+    .then(data => data.data.filter(function(data:any){
+      return data.category === "retornaveis"
+    }).map((data:any) => {
+      return setRetornaveis(data.products)
+    }));   
+  }
 
   useEffect(()=>{
 
-    try {
-      setLoader(true);
       popularesData();
       beatsData();
       retornaveisData();
-  
-    } finally {
-      setLoader(false);
-    }
 
-
-  },[data])
-
-  console.log(data)
+  },[])
 
   return (
     <Container>
