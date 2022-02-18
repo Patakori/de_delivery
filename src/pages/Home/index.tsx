@@ -20,13 +20,6 @@ import { Footer } from "../../Components/Footer";
 
 import ImgNews from "../../assets/news/product-illustration_alert.png"
 
-
-
-interface PropsData {
-  category: string,
-  products: [],
-}
-
 interface PropsProducts {
     id: string,
     price: string,
@@ -36,21 +29,26 @@ interface PropsProducts {
 
 export default function Home() {
 
-  const [populares, setPopulares] = useState<PropsProducts[]>([])
+  const [popular, setPopular] = useState<PropsProducts[]>([])
   const [beats, setBeats] = useState<PropsProducts[]>([])
-  const [retornaveis, setRetornaveis] = useState<PropsProducts[]>([])
-  const [loader, setLoader] = useState(false)
+  const [returnable, setReturnable] = useState<PropsProducts[]>([])
+  const [beer, setBeer] = useState<PropsProducts[]>([])
+  const [spirits, setSpirits] = useState<PropsProducts[]>([])
+  const [wine, setWine] = useState<PropsProducts[]>([])
+  const [noAlcohol, setNoAlcohol] = useState<PropsProducts[]>([])
+  const [shop, setShop] = useState<PropsProducts[]>([])
+  const [foods, setFoods] = useState<PropsProducts[]>([])
 
-  async function popularesData(){
+  async function popularData(){
     fetch('http://localhost:3000/api/products')
     .then(response => response.json())
     .then(data => data.data.filter(function(data:any){
-      return data.category === "populares"
+      return data.category === "popular"
     }).map((data:any) => {
-      return setPopulares(data.products)
+      return setPopular(data.products)
     }));       
   }
-  
+
   async function beatsData(){
     fetch('http://localhost:3000/api/products')
     .then(response => response.json())
@@ -61,21 +59,87 @@ export default function Home() {
     }));  
   }
 
-  async function retornaveisData(){
+  async function returnableData(){
     fetch('http://localhost:3000/api/products')
     .then(response => response.json())
     .then(data => data.data.filter(function(data:any){
-      return data.category === "retornaveis"
+      return data.category === "returnable"
     }).map((data:any) => {
-      return setRetornaveis(data.products)
+      return setReturnable(data.products)
+    }));   
+  }
+
+  async function beerData(){
+    fetch('http://localhost:3000/api/products')
+    .then(response => response.json())
+    .then(data => data.data.filter(function(data:any){
+      return data.category === "beer"
+    }).map((data:any) => {
+      return setBeer(data.products)
+    }));   
+  }
+
+  async function spiritsData(){
+    fetch('http://localhost:3000/api/products')
+    .then(response => response.json())
+    .then(data => data.data.filter(function(data:any){
+      return data.category === "spirits"
+    }).map((data:any) => {
+      return setSpirits(data.products)
+    }));   
+  }
+
+  async function wineData(){
+    fetch('http://localhost:3000/api/products')
+    .then(response => response.json())
+    .then(data => data.data.filter(function(data:any){
+      return data.category === "wine"
+    }).map((data:any) => {
+      return setWine(data.products)
+    }));   
+  }
+
+  async function noAlcoholData(){
+    fetch('http://localhost:3000/api/products')
+    .then(response => response.json())
+    .then(data => data.data.filter(function(data:any){
+      return data.category === "noAlcohol"
+    }).map((data:any) => {
+      return setNoAlcohol(data.products)
+    }));   
+  }
+
+  async function shopData(){
+    fetch('http://localhost:3000/api/products')
+    .then(response => response.json())
+    .then(data => data.data.filter(function(data:any){
+      return data.category === "shop"
+    }).map((data:any) => {
+      return setShop(data.products)
+    }));   
+  }
+
+  async function foodslData(){
+    fetch('http://localhost:3000/api/products')
+    .then(response => response.json())
+    .then(data => data.data.filter(function(data:any){
+      return data.category === "foods"
+    }).map((data:any) => {
+      return setFoods(data.products)
     }));   
   }
 
   useEffect(()=>{
 
-      popularesData();
+      popularData();
       beatsData();
-      retornaveisData();
+      returnableData();
+      beerData();
+      spiritsData();
+      wineData();
+      noAlcoholData();
+      shopData();
+      foodslData();
 
   },[])
 
@@ -89,7 +153,7 @@ export default function Home() {
       <Categorys category="POPULARES"> 
 
         {
-         loader ? <p>carregando</p> : populares.slice(0, 5).map(({name, id, image, price}:PropsProducts)=>{
+         popular.slice(0, 5).map(({name, id, image, price}:PropsProducts)=>{
           return(
             <Card  
                 key={id} 
@@ -134,7 +198,7 @@ export default function Home() {
       <Categorys category="RETORNÁVEIS"> 
 
         {
-          retornaveis.map(({name, id, image, price}:PropsProducts)=>{
+          returnable.map(({name, id, image, price}:PropsProducts)=>{
             return(
               <Card  
                   key={id} 
@@ -187,25 +251,103 @@ export default function Home() {
 
       <Categorys category="CERVEJAS"> 
 
+        {
+          beer.map(({name, id, image, price}:PropsProducts)=>{
+            return(
+              <Card  
+                  key={id} 
+                  img={<Image src={image} alt="img" width={100}  height={100}/>}
+                  product={name}
+                  value={price}
+              />
+            )
+          })
+        }
+
       </Categorys>
 
       <Categorys category="DESTILADOS"> 
+
+        {
+          spirits.map(({name, id, image, price}:PropsProducts)=>{
+            return(
+              <Card  
+                  key={id} 
+                  img={<Image src={image} alt="img" width={100}  height={100}/>}
+                  product={name}
+                  value={price}
+              />
+            )
+          })
+        }
 
       </Categorys>
 
       <Categorys category="VINHO"> 
 
+        {
+          wine.map(({name, id, image, price}:PropsProducts)=>{
+            return(
+              <Card  
+                  key={id} 
+                  img={<Image src={image} alt="img" width={100}  height={100}/>}
+                  product={name}
+                  value={price}
+              />
+            )
+          })
+        }
+
       </Categorys>
 
       <Categorys category="SEM ÁLCOOL"> 
+
+        {
+          noAlcohol.map(({name, id, image, price}:PropsProducts)=>{
+            return(
+              <Card  
+                  key={id} 
+                  img={<Image src={image} alt="img" width={100}  height={100}/>}
+                  product={name}
+                  value={price}
+              />
+            )
+          })
+        }
 
       </Categorys>
 
       <Categorys category="LOJINHA"> 
 
+        {
+          shop.map(({name, id, image, price}:PropsProducts)=>{
+            return(
+              <Card  
+                  key={id} 
+                  img={<Image src={image} alt="img" width={100}  height={100}/>}
+                  product={name}
+                  value={price}
+              />
+            )
+          })
+        }
+
       </Categorys>
 
       <Categorys category="COMIDINHA"> 
+
+        {
+          foods.map(({name, id, image, price}:PropsProducts)=>{
+            return(
+              <Card  
+                  key={id} 
+                  img={<Image src={image} alt="img" width={100}  height={100}/>}
+                  product={name}
+                  value={price}
+              />
+            )
+          })
+        }
 
       </Categorys>
 
