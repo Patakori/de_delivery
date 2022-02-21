@@ -40,8 +40,7 @@ export default function Home() {
 
         {isFetching && 
             <ContainerFetching>
-              <Spin><ImSpinner11 size={20}/></Spin>
-              <p>Carregando</p>
+              <Spin><ImSpinner11 size={20} color="#eba417"/></Spin>
             </ContainerFetching>
         }
         {
@@ -73,8 +72,7 @@ export default function Home() {
 
         {isFetching && 
             <ContainerFetching>
-              <Spin><ImSpinner11 size={20}/></Spin>
-              <p>Carregando</p>
+              <Spin><ImSpinner11 size={20} color="#eba417"/></Spin>
             </ContainerFetching>
         }
         {
@@ -97,8 +95,7 @@ export default function Home() {
 
         {isFetching && 
             <ContainerFetching>
-              <Spin><ImSpinner11 size={20}/></Spin>
-              <p>Carregando</p>
+              <Spin><ImSpinner11 size={20} color="#eba417"/></Spin>
             </ContainerFetching>
         }
         {
@@ -120,8 +117,7 @@ export default function Home() {
 
         {isFetching && 
             <ContainerFetching>
-              <Spin><ImSpinner11 size={20}/></Spin>
-              <p>Carregando</p>
+              <Spin><ImSpinner11 size={20} color="#eba417"/></Spin>
             </ContainerFetching>
         }
         {
@@ -148,8 +144,7 @@ export default function Home() {
 
         {isFetching && 
             <ContainerFetching>
-              <Spin><ImSpinner11 size={20}/></Spin>
-              <p>Carregando</p>
+              <Spin><ImSpinner11 size={20} color="#eba417"/></Spin>
             </ContainerFetching>
         }
         {
@@ -171,8 +166,7 @@ export default function Home() {
 
         {isFetching && 
             <ContainerFetching>
-              <Spin><ImSpinner11 size={20}/></Spin>
-              <p>Carregando</p>
+              <Spin><ImSpinner11 size={20} color="#eba417"/></Spin>
             </ContainerFetching>
         }
         {
@@ -194,8 +188,7 @@ export default function Home() {
 
         {isFetching && 
             <ContainerFetching>
-              <Spin><ImSpinner11 size={20}/></Spin>
-              <p>Carregando</p>
+              <Spin><ImSpinner11 size={20} color="#eba417"/></Spin>
             </ContainerFetching>
         }
         {
@@ -217,8 +210,7 @@ export default function Home() {
 
         {isFetching && 
             <ContainerFetching>
-              <Spin><ImSpinner11 size={20}/></Spin>
-              <p>Carregando</p>
+              <Spin><ImSpinner11 size={20} color="#eba417"/></Spin>
             </ContainerFetching>
         }
         {
@@ -240,8 +232,7 @@ export default function Home() {
 
         {isFetching && 
             <ContainerFetching>
-              <Spin><ImSpinner11 size={20}/></Spin>
-              <p>Carregando</p>
+              <Spin><ImSpinner11 size={20} color="#eba417"/></Spin>
             </ContainerFetching>
         }
         {
@@ -263,8 +254,7 @@ export default function Home() {
 
         {isFetching && 
             <ContainerFetching>
-              <Spin><ImSpinner11 size={20}/></Spin>
-              <p>Carregando</p>
+              <Spin><ImSpinner11 size={20} color="#eba417"/></Spin>
             </ContainerFetching>
         }
         {
