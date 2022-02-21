@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, {keyframes} from 'styled-components';
 
 export const Container = styled.div`    
     display: flex;
@@ -82,4 +82,35 @@ export const ContainerButton = styled.button`
     height: 56px;
 
     margin-bottom: -10px;
+`
+
+export const Spin = styled.div`
+    display: flex;
+    align-items: center;
+    
+    animation: spin 1s linear infinite;
+
+    @keyframes spin {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+`
+
+export const ContainerFetching = styled.div`
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 1000px;
+
+    column-gap: 10px;
+
+
+
 `

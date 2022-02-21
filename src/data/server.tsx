@@ -358,8 +358,23 @@ export function Data(){
                         name: 'Ovinhos de Amendoim Elma Chips',
                       },                    
                     ]},
-            
-            
+
+                    {
+                      category: 'highlights',
+                      products: [
+                        {
+                          id: 'hig1',
+                          image: "https://courier-images-prod.imgix.net/mini_banner/beats-150-bpm-by-anitta-2.jpg?auto=compress,format&fit=max&w=undefined&h=undefined&dpr=2",
+                        },
+                        {
+                          id: 'hig2',
+                          image: "https://courier-images-prod.imgix.net/mini_banner/vinhos-suaves.jpg?auto=compress,format&fit=max&w=undefined&h=undefined&dpr=2",
+                        },
+                        {
+                          id: 'hig3',
+                          image: "https://courier-images-prod.imgix.net/mini_banner/verao-com-cheetos.jpg?auto=compress,format&fit=max&w=undefined&h=undefined&dpr=2",
+                        },
+                      ]},
         ]
         }
       ))

@@ -6,14 +6,13 @@ import 'swiper/css';
 
 import { Data } from"../data/server"
 
-
 function MyApp({ Component, pageProps }: AppProps) {
-
-  const data = Data()
+  Data()
+  
   return (
     <>
       <GlobalStyle />
-      <Component {...pageProps} />
+        <Component {...pageProps} />
     </>
   ) 
 }

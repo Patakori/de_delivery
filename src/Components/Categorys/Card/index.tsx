@@ -1,3 +1,4 @@
+
 import { 
     Container,
     Info,
@@ -15,14 +16,16 @@ interface PropsCard {
 
 export function Card({img, product, value}:PropsCard){
     return(
-        <Container>
-            <BoxImg>
-                {img}
-            </BoxImg>
-            <Info>
-                <span>{product}</span>
-                <p>R$ {value}</p>
-            </Info>
-        </Container>
+        <>
+            <Container>
+                <BoxImg>
+                    {img}
+                </BoxImg>
+                <Info>
+                    <span>{product}</span>
+                    <p>R$ {value}</p>
+                </Info>
+            </Container>
+        </>
     )
 }
