@@ -13,6 +13,7 @@ export const Container = styled.div`
     @media (min-width: 1160px) {
         margin-top: 0px;
         margin-left: 22px;
+        width: 100%;
     }
 
 
@@ -51,8 +52,8 @@ export const Container = styled.div`
             color: var(--grey);
         }
         
-        @media (min-width: 1300px) {
-        width: 538px;
+        @media (min-width: 1160px) {
+        width: 100%;
     }
     }
 

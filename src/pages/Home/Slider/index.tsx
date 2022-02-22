@@ -17,9 +17,13 @@ import {
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import { PropsHighlights, useCategory } from '../../../hooks/useCategory';
 
 
 export function Slider (){
+
+    const { slider } = useCategory<PropsHighlights[]>('/api/products')
+
     return(
         <Container>
             <Swiper
@@ -33,24 +37,24 @@ export function Slider (){
                 style={{width: '100%', flex: '1'}}
             >
 
-                <SwiperSlide>
-                    <ContainerSlider>
-                        <Image src={imgSlider} alt="img"/>
-                    </ContainerSlider>
-                </SwiperSlide>
-                
-                <SwiperSlide>
-                    <ContainerSlider>
-                        <Image src={imgSlider} alt="img"/>
-                    </ContainerSlider>
-                </SwiperSlide>
-                
-                <SwiperSlide>
-                    <ContainerSlider>
-                        <Image src={imgSlider} alt="img"/>
-                    </ContainerSlider>
-                </SwiperSlide>
-
+                {
+                    slider.map(({id, image}:PropsHighlights)=>{
+                        return(
+                        <SwiperSlide key={id}>
+                            <ContainerSlider>
+                                <Image src={image} 
+                                    alt="img" 
+                                    //width={900}  
+                                    //height={900}
+                                    layout="fill"            
+                                    
+                                    objectPosition='container'
+                                />
+                            </ContainerSlider>
+                        </SwiperSlide>
+                        )
+                    })
+                }
 
             </Swiper>
 

@@ -375,6 +375,40 @@ export function Data(){
                           image: "https://courier-images-prod.imgix.net/mini_banner/verao-com-cheetos.jpg?auto=compress,format&fit=max&w=undefined&h=undefined&dpr=2",
                         },
                       ]},
+
+                    {
+                      category: 'slider',
+                      products: [
+                        {
+                          id: 'sli1',
+                          image: 'https://courier-images-prod.imgix.net/banner/654cb962-fb27-42d2-a5f9-fad213ed08a6_6d598033-0494-4567-9a21-d57ce07ab2dd.jpg?auto=compress,format&fit=max&w=undefined&h=undefined&dpr=2',
+                        },
+                        {
+                          id: 'sli2',
+                          image: 'https://courier-images-prod.imgix.net/banner/00874b2c-5fd0-4ea7-b21b-69f2cbcb2128_0754cebe-4e64-487f-9ddd-a54eb5f58a69.jpg?auto=compress,format&fit=max&w=undefined&h=undefined&dpr=2',
+                        },
+                        {
+                          id: 'sli3',
+                          image: 'https://courier-images-prod.imgix.net/banner/5c288109-eae3-4cb4-abf2-c0e9403ecd49_3f168081-ada1-4d43-b028-3b9fd4e01df2.jpg?auto=compress,format&fit=max&w=undefined&h=undefined&dpr=2',
+                        },
+                        {
+                          id: 'sli4',
+                          image: 'https://courier-images-prod.imgix.net/banner/e7070b09-2d72-4898-b946-2eb77394d13c_9ff61627-c6bd-47e8-b77a-9bc289806fc9.jpg?auto=compress,format&fit=max&w=undefined&h=undefined&dpr=2',
+                        },
+                        {
+                          id: 'sli5',
+                          image: 'https://courier-images-prod.imgix.net/banner/fcd3761e-fe7b-4b49-8a52-2ab866426993_68e0e78a-2dc1-43ae-8be7-9e93ab8d3695.jpg?auto=compress,format&fit=max&w=undefined&h=undefined&dpr=2',
+                        },
+                        {
+                          id: 'sli6',
+                          image: 'https://courier-images-prod.imgix.net/banner/26488164-e6d1-4374-8feb-b929074afca3_097edfd7-02c5-4109-b94a-247c483b9074.jpg?auto=compress,format&fit=max&w=undefined&h=undefined&dpr=2',
+                        },
+                        {
+                          id: 'sli7',
+                          image: 'https://courier-images-prod.imgix.net/banner/79795a5b-0e5a-4158-8fca-5acbdf89d182_b18a49db-e16f-45f8-be2e-2e39dede6482.jpg?auto=compress,format&fit=max&w=undefined&h=undefined&dpr=2',
+                        },
+                      ]},
+
         ]
         }
       ))

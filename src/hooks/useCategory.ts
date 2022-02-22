@@ -29,6 +29,7 @@ export function useCategory<T = unknown>(url:string, options?:AxiosRequestConfig
     const [foods, setFoods] = useState<PropsProducts[]>([])
 
     const [highlights, setHighlights] = useState<PropsHighlights[]>([])
+    const [slider, setSlider] = useState<PropsHighlights[]>([])
   
     const [isFetching, setIsFetching] = useState(true)
     const [error, setError] = useState<Error | null>(null)
@@ -132,6 +133,16 @@ export function useCategory<T = unknown>(url:string, options?:AxiosRequestConfig
         .catch(err => { setError(err) })
         .finally(() =>{ setIsFetching(false) })
     }
+
+    async function sliderData(){
+      apiAxios.get('/api/products')
+        .then(response => response.data.data.filter(function(data:any){
+            return data.category === "slider"})
+        .map((data:any) => {
+        return setSlider(data.products)}))
+        .catch(err => { setError(err) })
+        .finally(() =>{ setIsFetching(false) })
+    }
   
     useEffect(()=>{
   
@@ -145,9 +156,10 @@ export function useCategory<T = unknown>(url:string, options?:AxiosRequestConfig
         shopData();
         foodslData();
         highlightsData();
+        sliderData();
   
     },[])
     
 
-    return { popular, beats, returnable, beer, spirits, wine, noAlcohol, shop, foods, highlights, isFetching, error }
+    return { popular, beats, returnable, beer, spirits, wine, noAlcohol, shop, foods, highlights, slider, isFetching, error }
 }

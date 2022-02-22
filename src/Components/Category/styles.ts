@@ -8,13 +8,25 @@ export const Container = styled.div`
 
     margin: 26px 17px;
 
+
+
+    @media (min-width: 600px) {
+
+        display: grid;
+
+        grid-template-columns: repeat(3, 159px);
+        grid-row-gap: 6px;
+        grid-column-gap: 6px;
+
+    }
+
     @media (min-width: 1160px) {
 
         display: flex;
-
+        
         align-items: center;
         justify-content: center;
-    }
+    }   
 
     
 `
