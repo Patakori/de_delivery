@@ -55,7 +55,7 @@ export const Info = styled.div`
         margin-top: 9px;
         margin-right: 10px;
         margin-left: 10px;
-        font-size: 0.75rem;
+        font-size: 1rem;
         color: var(--grey);
         white-space: pre-line
 

@@ -32,8 +32,10 @@ export default function Home() {
   return (
     <Container>
 
-      <Header/>
+      <Header />
+
       <Slider/>
+
       <Category/>
 
       <Categorys category="POPULARES"> 

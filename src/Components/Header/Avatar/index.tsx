@@ -8,7 +8,11 @@ import {
 
  } from "./styles";
 
-export function Avatar(){
+ interface HeaderProps{
+    onOpenNewModal: () => void;
+}
+
+export function Avatar({onOpenNewModal}:HeaderProps){
     return (
         <Container>
             <IconsJoin>
@@ -22,7 +26,7 @@ export function Avatar(){
                 <h1>Por favor</h1>
                 <h2>Informar sua localização</h2>
             </Location>
-            <Button>
+            <Button type="button" onClick={onOpenNewModal}>
                 <HiChevronDown  color="#ffffff" fontSize={20}/>
             </Button>
         </Container>

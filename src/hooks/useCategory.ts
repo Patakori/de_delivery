@@ -37,7 +37,7 @@ export function useCategory<T = unknown>(url:string, options?:AxiosRequestConfig
     async function popularData(){
       apiAxios.get('/api/products')
         .then(response => response.data.data.filter(function(data:any){
-            return data.category === "popular"})
+            return data.category.includes("popular") })
         .map((data:any) => {
         return setPopular(data.products)}))
         .catch(err => { setError(err) })
@@ -47,7 +47,7 @@ export function useCategory<T = unknown>(url:string, options?:AxiosRequestConfig
     async function beatsData(){
       apiAxios.get('/api/products')
         .then(response => response.data.data.filter(function(data:any){
-            return data.category === "beats"})
+            return data.category.includes("beats")})
         .map((data:any) => {
         return setBeats(data.products)}))
         .catch(err => { setError(err) })
@@ -57,7 +57,7 @@ export function useCategory<T = unknown>(url:string, options?:AxiosRequestConfig
     async function returnableData(){
       apiAxios.get('/api/products')
         .then(response => response.data.data.filter(function(data:any){
-            return data.category === "returnable"})
+            return data.category.includes("returnable")})
         .map((data:any) => {
         return setReturnable(data.products)}))
         .catch(err => { setError(err) })
@@ -67,7 +67,7 @@ export function useCategory<T = unknown>(url:string, options?:AxiosRequestConfig
     async function beerData(){
       apiAxios.get('/api/products')
         .then(response => response.data.data.filter(function(data:any){
-            return data.category === "beer"})
+            return data.category.includes("beer")})
         .map((data:any) => {
         return setBeer(data.products)}))
         .catch(err => { setError(err) })
@@ -77,7 +77,7 @@ export function useCategory<T = unknown>(url:string, options?:AxiosRequestConfig
     async function spiritsData(){
       apiAxios.get('/api/products')
         .then(response => response.data.data.filter(function(data:any){
-            return data.category === "spirits"})
+            return data.category.includes("spirits")})
         .map((data:any) => {
         return setSpirits(data.products)}))
         .catch(err => { setError(err) })
@@ -87,7 +87,7 @@ export function useCategory<T = unknown>(url:string, options?:AxiosRequestConfig
     async function wineData(){
       apiAxios.get('/api/products')
         .then(response => response.data.data.filter(function(data:any){
-            return data.category === "wine"})
+            return data.category.includes("wine")})
         .map((data:any) => {
         return setWine(data.products)}))
         .catch(err => { setError(err) })
@@ -97,7 +97,7 @@ export function useCategory<T = unknown>(url:string, options?:AxiosRequestConfig
     async function noAlcoholData(){
       apiAxios.get('/api/products')
         .then(response => response.data.data.filter(function(data:any){
-            return data.category === "noAlcohol"})
+            return data.category.includes("noAlcohol")})
         .map((data:any) => {
         return setNoAlcohol(data.products)}))
         .catch(err => { setError(err) })
@@ -107,7 +107,7 @@ export function useCategory<T = unknown>(url:string, options?:AxiosRequestConfig
     async function shopData(){
       apiAxios.get('/api/products')
         .then(response => response.data.data.filter(function(data:any){
-            return data.category === "shop"})
+            return data.category.includes("shop")})
         .map((data:any) => {
         return setShop(data.products)}))
         .catch(err => { setError(err) })
@@ -117,7 +117,7 @@ export function useCategory<T = unknown>(url:string, options?:AxiosRequestConfig
     async function foodslData(){
       apiAxios.get('/api/products')
         .then(response => response.data.data.filter(function(data:any){
-            return data.category === "foods"})
+            return data.category.includes("beer")})
         .map((data:any) => {
         return setFoods(data.products)}))
         .catch(err => { setError(err) })
@@ -127,7 +127,7 @@ export function useCategory<T = unknown>(url:string, options?:AxiosRequestConfig
     async function highlightsData(){
       apiAxios.get('/api/products')
         .then(response => response.data.data.filter(function(data:any){
-            return data.category === "highlights"})
+            return data.category.includes("highlights")})
         .map((data:any) => {
         return setHighlights(data.products)}))
         .catch(err => { setError(err) })
@@ -137,7 +137,7 @@ export function useCategory<T = unknown>(url:string, options?:AxiosRequestConfig
     async function sliderData(){
       apiAxios.get('/api/products')
         .then(response => response.data.data.filter(function(data:any){
-            return data.category === "slider"})
+            return data.category.includes("slider")})
         .map((data:any) => {
         return setSlider(data.products)}))
         .catch(err => { setError(err) })
