@@ -2,13 +2,12 @@ import styled from "styled-components";
 
 export const Container = styled.div`
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 
     height: 50px;
-
-
     
     margin-top: 16px;
+
 
     @media (min-width: 1160px) {
         margin-top: 0px;
@@ -33,6 +32,8 @@ export const Container = styled.div`
         border: none;
         border-top-left-radius: 9px;
         border-bottom-left-radius: 9px;
+ 
+        z-index: 400;
     }
 
     input {
@@ -40,9 +41,13 @@ export const Container = styled.div`
         width: 289px;
         height: 49px;
 
+        padding-left: 10px;
+
         border: none;
         border-top-right-radius: 9px;
         border-bottom-right-radius: 9px;
+
+        z-index: 400;
 
         :focus{
                 outline: none;
@@ -57,4 +62,10 @@ export const Container = styled.div`
     }
     }
 
+`
+
+export const ContainerSearch = styled.div`
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 8px;
 `

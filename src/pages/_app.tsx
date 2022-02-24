@@ -5,18 +5,17 @@ import { GlobalStyle } from '../styles/global'
 import 'swiper/css';
 
 import { Data } from"../data/server"
-import { ContextModal } from '../hooks/ContextModal';
+
 
 
 function MyApp({ Component, pageProps }: AppProps) {
   Data()
   
   return (
- 
-    <ContextModal>
-      <GlobalStyle/>
-      <Component {...pageProps} />      
-    </ContextModal>
+        <>
+          <GlobalStyle/>
+          <Component {...pageProps} />      
+        </>
   ) 
 }
 

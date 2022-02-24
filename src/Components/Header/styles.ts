@@ -11,6 +11,9 @@ export const Container = styled.div`
 
     justify-content: space-between;
 
+
+    z-index: 30;
+
     @media (min-width: 1160px) {
         height: 89px;
         padding: 0px 115px;
@@ -24,6 +27,8 @@ export const ContainerLeft = styled.div`
     align-items: center;
     width: 100%;
     height: 100%;
+    
+
 
     @media (min-width: 1160px) {
         display: flex;
@@ -47,3 +52,4 @@ export const ContainerRight = styled.div`
     }
 
 `
+

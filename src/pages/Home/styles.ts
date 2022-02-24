@@ -10,6 +10,8 @@ export const Container = styled.div`
 
     height: 100%;
 
+    position: relative;
+
     @media (min-width: 1100px) {
         width: 100%;
 

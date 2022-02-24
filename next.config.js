@@ -8,6 +8,7 @@ module.exports = nextConfig
 
 module.exports = {
   images: {
-    domains: ['courier-images-prod.imgix.net'],
+    domains: ['courier-images-prod.imgix.net', 'courier-images-web.imgix.net'],
   },
 }
+

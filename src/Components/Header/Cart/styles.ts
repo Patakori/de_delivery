@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
     display: flex;
 
-        div{
+        >div{
             display: flex;
 
             width:20px;
@@ -22,5 +22,56 @@ export const Container = styled.div`
             transform: translate(1.80rem, .2rem);
         }
 
+
+`
+
+export const ContainerImage = styled.div`
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: var(--grey-50);
+
+    border: none;
+
+
+`
+
+export const ContainerBag = styled.div`
+    display: flex;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 20px;
+
+    width: 100%;
+    height: 60px;
+
+
+    >h1{
+        width: 100%;
+        font-size: 1rem;
+        padding-left: 50px;
+        
+    }
+
+    >button{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        height: 40px;
+        width: 40px;
+        
+        border: none;
+        background-color: white;
+
+        margin-right: 20px;
+
+        font-size: 1.250rem;
+    }
 
 `
