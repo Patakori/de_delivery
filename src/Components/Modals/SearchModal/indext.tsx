@@ -16,12 +16,14 @@ export function SearchModal({onClose, inClose, children, type}: propsNewModal){
   const [animation, setAnimation] = useState(false)
 
   const handleOutsideClick = (e:any) => {
-    if(e.target.id) onClose();
+    setAnimation(true)
+    if(e.target.id)
+    setTimeout( onClose, 800);
   }
 
   return(
     <>
-      <ContainerExternal type={animation} id='modal' onClick={handleOutsideClick}/>
+      <ContainerExternal type={animation} id='SearchModal' onClick={handleOutsideClick}/>
       <ContainerInternal type={animation}>
         {children}     
       </ContainerInternal>

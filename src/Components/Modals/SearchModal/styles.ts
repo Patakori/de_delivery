@@ -20,15 +20,15 @@ export const ContainerExternal = styled.div<Props>`
     animation: ${({type})=>
         {
             if(type === false){
-                return 'smokeFinally'
+                return 'overlayFinally'
             }
             if(type === true){
-                return 'smokeInitial'
+                return 'overlayInitial'
             }
         } 
             } 1s forwards;
         
-        @keyframes smokeFinally {
+        @keyframes overlayFinally {
             to {
                 background-color: rgba( 0, 0, 0, 0.5 );
                 
@@ -39,7 +39,7 @@ export const ContainerExternal = styled.div<Props>`
             }
         };
         
-        @keyframes smokeInitial {
+        @keyframes overlayInitial {
             to {
                 background-color: none;
                 
@@ -76,29 +76,29 @@ export const ContainerInternal = styled.div<Props>`
     animation: ${({type})=>
     {
         if(type === false){
-            return 'go-close'
+            return 'closeSearch'
         }
         if(type === true){
-            return 'go-open'
+            return 'openSearch'
         }
     } 
-        } 2s;
+        } 1s;
 
-    @keyframes go-close {
+    @keyframes closeSearch {
         0% {
-            transform: translateX(0);
+            opacity: 0;
         }
         100% {
-            transform: translateX(0);
+            opacity: 1;
         }
     };
 
-    @keyframes go-open {
+    @keyframes openSearch {
         0% {
-            transform: translateX(0);
+            opacity: 1;
         }
         100% {
-            transform: translate(0);
+            opacity: 0;
         }
     };
 
