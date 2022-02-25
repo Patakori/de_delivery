@@ -33,7 +33,7 @@ export const Container = styled.div`
         border-top-left-radius: 9px;
         border-bottom-left-radius: 9px;
  
-        z-index: 300;
+        z-index: 200;
     }
 
     input {
@@ -47,7 +47,7 @@ export const Container = styled.div`
         border-top-right-radius: 9px;
         border-bottom-right-radius: 9px;
 
-        z-index: 300;
+        z-index: 200;
 
         :focus{
                 outline: none;

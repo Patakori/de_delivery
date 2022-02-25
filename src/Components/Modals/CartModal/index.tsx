@@ -1,24 +1,38 @@
-import { ReactNode } from "react";
+import { ReactNode, useState } from "react";
 import { 
   ContainerExternal,
-  ContainerInternal
+  ContainerInternal,
+  ContainerBag
+
 } from "./styles";
 
-interface propsNewModal {
+export interface propsNewModal {
   onClose: () => void;
   children: ReactNode;
+  type?: boolean;
 }
 
-export function CartModal({onClose, children}: propsNewModal){
+export function CartModal({onClose, children, type}: propsNewModal){
+
+  const [animation, setAnimation] = useState(false)
 
   const handleOutsideClick = (e:any) => {
-    if(e.target.id) onClose();
+    setAnimation(true)
+    if(e.target.id) {
+      setTimeout( onClose, 800)
+      
+    }
   }
 
   return(
     <>
-      <ContainerExternal id='modal' onClick={handleOutsideClick}/>
-      <ContainerInternal>
+      <ContainerExternal type={animation} id='modal' onClick={handleOutsideClick}/>
+      <ContainerInternal type={animation}>
+      <ContainerBag>   
+            <h1>SACOLA</h1>
+                            
+            <button type='button' id='modal' onClick={handleOutsideClick}>X</button>
+      </ContainerBag>
         {children}     
       </ContainerInternal>
     </>

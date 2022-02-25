@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode, useState } from "react";
 import { 
   ContainerExternal,
   ContainerInternal
@@ -6,10 +6,14 @@ import {
 
 interface propsNewModal {
   onClose: () => void;
+  inClose: () => void;
   children: ReactNode;
+  type?: boolean
 }
 
-export function SearchModal({onClose, children}: propsNewModal){
+export function SearchModal({onClose, inClose, children, type}: propsNewModal){
+
+  const [animation, setAnimation] = useState(false)
 
   const handleOutsideClick = (e:any) => {
     if(e.target.id) onClose();
@@ -17,8 +21,8 @@ export function SearchModal({onClose, children}: propsNewModal){
 
   return(
     <>
-      <ContainerExternal id='modal' onClick={handleOutsideClick}/>
-      <ContainerInternal>
+      <ContainerExternal type={animation} id='modal' onClick={handleOutsideClick}/>
+      <ContainerInternal type={animation}>
         {children}     
       </ContainerInternal>
     </>

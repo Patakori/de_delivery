@@ -26,42 +26,7 @@ export const Container = styled.div`
 
 `
 
-export const ContainerBag = styled.div`
-    display: flex;
-    align-items: center;
 
-    text-align: center;
-
-    padding: 20px;
-
-    width: 100%;
-    height: 60px;
-
-
-    >h1{
-        width: 100%;
-        font-size: 1rem;
-        padding-left: 50px;
-        
-    }
-
-    >button{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        height: 40px;
-        width: 40px;
-        
-        border: none;
-        background-color: white;
-
-        margin-right: 20px;
-
-        font-size: 1.250rem;
-    }
-
-`
 
 export const ContainerImage = styled.div`
     display: flex;
@@ -71,6 +36,8 @@ export const ContainerImage = styled.div`
 
     width: 100%;
     height: 100%;
+
+    padding-top: 50px;
 
     background-color: var(--grey-50);
 
@@ -84,4 +51,11 @@ export const ContainerText = styled.div`
         text-align: center;
         font-size: 1rem;
         color: var(--grey-100);
+        width: 300px;
+        word-spacing: 0px;   
+        line-height: 25px;   
+
+        p{
+            white-space: pre-line;
+        }
 `

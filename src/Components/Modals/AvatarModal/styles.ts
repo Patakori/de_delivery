@@ -10,7 +10,7 @@ export const ContainerExternal = styled.div`
     top:0px;
     left: 0px;
 
-    z-index: 20;
+    z-index: 300;
 
     display: flex;
 `
