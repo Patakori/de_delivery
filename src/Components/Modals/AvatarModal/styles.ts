@@ -31,7 +31,7 @@ export const ContainerInternal = styled.div`
     row-gap: 20px;
 
     position: fixed;
-    z-index: 300;
+    z-index: 400;
     box-shadow: 2px 3px 5px var(--grey);
 
     font-size: .85rem;

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    
+    width: 100%;
 
     button {
         display: flex;
@@ -12,14 +12,15 @@ export const Container = styled.div`
         background-color: var(--white);
 
         height: 49px;
-        width: 159px;
+        width: 100%;
         border-radius:9px;
         border: solid var(--white-50);
         border-width: 2px;
 
         @media (min-width: 1160px) {
 
-            width: 189px;
+            width: 100%;
+            max-width: 189px;
 
         }
         

@@ -1,4 +1,4 @@
-import { Container, ContainerImage, ContainerBag } from "./styles";
+import { Container, ContainerImage, ContainerBag, ContainerText } from "./styles";
 
 import { HiOutlineShoppingBag } from "react-icons/hi"
 import { useState } from "react";
@@ -40,8 +40,9 @@ export function Cart(){
                                 layout="fixed"
                                 objectFit="cover"               
                             />
-
+                            <ContainerText>Putz, está vazia! <br/> Você não possui nenhum produto na sua <br/> sacola</ContainerText>
                         </ContainerImage>
+                        
                     </CartModal>
                 )
                 : null

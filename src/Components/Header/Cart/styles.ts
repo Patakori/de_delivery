@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
     display: flex;
+    margin-right: 15px;
 
         >div{
             display: flex;
@@ -21,20 +22,6 @@ export const Container = styled.div`
             border-radius: 100%;
             transform: translate(1.80rem, .2rem);
         }
-
-
-`
-
-export const ContainerImage = styled.div`
-    display: flex;
-    align-items: center;
-
-    width: 100%;
-    height: 100%;
-
-    background-color: var(--grey-50);
-
-    border: none;
 
 
 `
@@ -74,4 +61,27 @@ export const ContainerBag = styled.div`
         font-size: 1.250rem;
     }
 
+`
+
+export const ContainerImage = styled.div`
+    display: flex;
+    align-items: center;
+
+    flex-direction: column;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: var(--grey-50);
+
+    border: none;
+
+
+`
+
+export const ContainerText = styled.div`
+        display: flex;
+        text-align: center;
+        font-size: 1rem;
+        color: var(--grey-100);
 `

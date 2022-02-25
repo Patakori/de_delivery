@@ -16,7 +16,7 @@ import {
 export function Header(){
 
     return(
-        <Container>
+        <Container>  
             <ContainerLeft>
                 <Avatar/>
                 <Search/>
@@ -24,7 +24,7 @@ export function Header(){
             <ContainerRight>
                 <Login/>
                 <Cart />
-            </ContainerRight>
+            </ContainerRight>    
         </Container>
     )
 }

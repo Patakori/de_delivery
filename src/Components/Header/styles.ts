@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import Modal from 'styled-react-modal'
 
 export const Container = styled.div`    
     background: var(--black);
@@ -9,14 +8,14 @@ export const Container = styled.div`
     height: 144px;
     width: 100%;
 
-    justify-content: space-between;
+    justify-content: center;
 
 
     z-index: 30;
 
-    @media (min-width: 1160px) {
+    @media (min-width: 760px) {
         height: 89px;
-        padding: 0px 115px;
+        padding: 0px 0px;
     }
 
 
@@ -26,11 +25,12 @@ export const ContainerLeft = styled.div`
     flex-direction: column;
     align-items: center;
     width: 100%;
+    max-width: 1000px;
     height: 100%;
     
 
 
-    @media (min-width: 1160px) {
+    @media (min-width: 760px) {
         display: flex;
         flex-direction: row;
 
@@ -43,7 +43,7 @@ export const ContainerLeft = styled.div`
 export const ContainerRight = styled.div`
     display: none;
 
-    @media (min-width: 1160px) {
+    @media (min-width: 760px) {
         display: flex;
 
         flex-direction: row;

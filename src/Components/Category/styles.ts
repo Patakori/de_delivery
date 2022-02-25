@@ -7,7 +7,12 @@ export const Container = styled.div`
     grid-column-gap: 6px;
 
     margin: 26px 17px;
+    justify-content: center;
+    padding-left: 15px;
+    padding-right: 15px;
 
+    width:100% ;
+    max-width: 1150px;
 
 
     @media (min-width: 600px) {
@@ -20,7 +25,7 @@ export const Container = styled.div`
 
     }
 
-    @media (min-width: 1160px) {
+    @media (min-width: 760px) {
 
         display: flex;
         

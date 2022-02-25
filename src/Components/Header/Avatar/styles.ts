@@ -11,8 +11,9 @@ export const Container = styled.div`
 
     background: var(--black);
 
-    @media (min-width: 1160px) {
+    @media (min-width: 760px) {
         margin-top: 0px;
+        margin-left: 15px;
     }
     
 `

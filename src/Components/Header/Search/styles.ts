@@ -9,7 +9,7 @@ export const Container = styled.div`
     margin-top: 16px;
 
 
-    @media (min-width: 1160px) {
+    @media (min-width: 760px) {
         margin-top: 0px;
         margin-left: 22px;
         width: 50%;
@@ -33,7 +33,7 @@ export const Container = styled.div`
         border-top-left-radius: 9px;
         border-bottom-left-radius: 9px;
  
-        z-index: 400;
+        z-index: 300;
     }
 
     input {
@@ -47,7 +47,7 @@ export const Container = styled.div`
         border-top-right-radius: 9px;
         border-bottom-right-radius: 9px;
 
-        z-index: 400;
+        z-index: 300;
 
         :focus{
                 outline: none;
@@ -57,7 +57,7 @@ export const Container = styled.div`
             color: var(--grey);
         }
         
-        @media (min-width: 1160px) {
+        @media (min-width: 760px) {
         width: 100%;
     }
     }
