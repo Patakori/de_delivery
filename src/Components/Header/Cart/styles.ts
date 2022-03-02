@@ -4,6 +4,8 @@ export const Container = styled.div`
     display: flex;
     margin-right: 15px;
 
+    cursor: pointer;
+
         >div{
             display: flex;
 

@@ -6,12 +6,11 @@ import {
 
 interface propsNewModal {
   onClose: () => void;
-  inClose: () => void;
   children: ReactNode;
-  type?: boolean
+  type?: boolean;
 }
 
-export function SearchModal({onClose, inClose, children, type}: propsNewModal){
+export function SearchModal({onClose, children, type}: propsNewModal){
 
   const [animation, setAnimation] = useState(false)
 
@@ -25,7 +24,7 @@ export function SearchModal({onClose, inClose, children, type}: propsNewModal){
     <>
       <ContainerExternal type={animation} id='SearchModal' onClick={handleOutsideClick}/>
       <ContainerInternal type={animation}>
-        {children}     
+        {children}    
       </ContainerInternal>
     </>
   )

@@ -9,7 +9,7 @@ import {
           
         } from "./styles";
 
-import { Category } from "../../Components/Category";
+import { ButtonCategorys } from "../../Components/Category/ButtonCategorys";
 import { Header } from "../../Components/Header";
 import { Slider } from "./Slider";
 import { Categorys } from "../../Components/Categorys";
@@ -24,10 +24,13 @@ import { PropsProducts, PropsHighlights } from "../../hooks/useCategory"
 import ImgNews from "../../assets/news/product-illustration_alert.png"
 
 import { ImSpinner11 } from "react-icons/im"
+import { Category } from "../../Components/Category";
+
 
 export default function Home() {
 
-  const { popular, beats, returnable, beer, spirits, wine, noAlcohol, shop, foods, highlights,isFetching, error } = useCategory<PropsProducts[]>('/api/products')
+  const { popular, beats, returnable, beer, spirits, wine, noAlcohol, shop, foods, highlights,isFetching } = useCategory<PropsProducts[]>('/api/products')
+  
 
   return (
     <Container>

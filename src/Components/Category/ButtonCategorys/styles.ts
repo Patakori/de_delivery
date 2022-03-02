@@ -2,8 +2,11 @@ import styled from "styled-components";
 
 export const Container = styled.div`
     width: 100%;
+        
+`
 
-    button {
+export const ContainerButton = styled.button`
+
         display: flex;
         align-items: center;
         justify-content: center;
@@ -20,10 +23,7 @@ export const Container = styled.div`
         @media (min-width: 1160px) {
 
             width: 100%;
-            max-width: 189px;
+
 
         }
-        
-    }
-
 `

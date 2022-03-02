@@ -113,6 +113,4 @@ export const ContainerFetching = styled.div`
 
     column-gap: 10px;
 
-
-
 `

@@ -52,26 +52,18 @@ export const ContainerExternal = styled.div<Props>`
         };
 `
 export const ContainerInternal = styled.div<Props>`
+    width: 100%;
     display: flex;
-    justify-content: center;
     flex-direction: column;
 
     background: white;
 
-    width: 100%;
-    top: 100px;
-
-    padding: 20px;
     border: none;
     border-radius: 9px;
-
-    row-gap: 20px;
 
     position: sticky;
     z-index: 200;
     box-shadow: 2px 3px 5px var(--grey);
-
-    font-size: .85rem;
 
     animation: ${({type})=>
     {

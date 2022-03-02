@@ -11,6 +11,8 @@ export const Container = styled.div`
 
     background: var(--black);
 
+
+
     @media (min-width: 760px) {
         margin-top: 0px;
         margin-left: 15px;
@@ -45,6 +47,8 @@ export const Location = styled.div`
 
     font-size: 0.5rem;
     margin-left: 21px;
+
+    cursor: pointer;
     
     h1 {
         font-weight: 400;

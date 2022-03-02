@@ -16,7 +16,7 @@ export function Data(){
               id: 'pop1',
               image: "https://courier-images-prod.imgix.net/produc_variant/00008502_ebec6579-f3d3-43c3-a9b3-96d7b5aacfe9.jpg?auto=compress,format&fit=max&w=undefined&h=undefined&dpr=2",
               price: "2,39",
-              name: 'Skoll 269ml',
+              name: 'Skol 269ml',
             },
             {
               id: 'pop2',

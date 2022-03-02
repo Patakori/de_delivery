@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const ContainerCategory = styled.div`
     display: grid;
     grid-template-columns: repeat(2, 159px);
     grid-row-gap: 6px;

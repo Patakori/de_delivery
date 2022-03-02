@@ -1,4 +1,5 @@
 
+import { UseSearchProvider } from "../../hooks/UseSearch";
 import { Avatar } from "./Avatar";
 import { Cart } from "./Cart";
 import { Login } from "./Login";
@@ -16,6 +17,7 @@ import {
 export function Header(){
 
     return(
+    <UseSearchProvider>
         <Container>  
             <ContainerLeft>
                 <Avatar/>
@@ -26,5 +28,6 @@ export function Header(){
                 <Cart />
             </ContainerRight>    
         </Container>
+    </UseSearchProvider>
     )
 }
