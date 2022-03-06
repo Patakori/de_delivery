@@ -129,7 +129,7 @@ export const ContainerExternalList = styled.div<Props>`
   
 `
 
-export const ContainerList = styled.div`
+export const ContainerList = styled.a`
     display: flex;
     width: 100%;
     height: 66px;

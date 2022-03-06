@@ -116,9 +116,11 @@ export function Search({type}:PropsType){
                                     respSearch.map(({name, id, price, image}:PropsProducts)=>{
                                         return(
                                           <ContainerList key={id} 
-                                          onClick={() =>{ 
-                                            router.push(`/product/${id}`)
-                                            }}>                                      
+                                          href={`/product/${id}`}
+                                          onClick={() =>{                             
+                                             router.push('href')
+                                            }}
+                                            >                                      
                                             <ConainerListImage>
                                               <Image src={image} alt="img" width={100}  height={100}/>
                                             </ConainerListImage>

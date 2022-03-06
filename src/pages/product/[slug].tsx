@@ -1,4 +1,6 @@
 
+import dynamic from 'next/dynamic';
+import Router from 'next/router';
 import { useRouter } from 'next/router';
 import { useContext, useEffect, useState } from 'react';
 
@@ -34,14 +36,9 @@ import {
  } from './styles';
 
 export default function product(){
-
     
-    const {query, asPath, reload, push, prefetch, pathname} = useRouter();
-    console.log(query);
-    console.log(asPath);
-    console.log(pathname);
-
-    
+    const { query : {slug}, asPath} = useRouter();
+ 
     const [getTesteSearch, setGetTesteSearch] = useState<PropsProducts[]>([])
 
     async function searchIdData(id:any){
@@ -49,21 +46,19 @@ export default function product(){
         .then((response) => setGetTesteSearch(response.data.data.map((data:any)=>{
             return data.products
         }).flat().filter((products:any)=>{
-            return products.id?.includes(id)
+            return products.id === id
         }) 
         ))} 
 
 
-    useEffect(() => {
-        
-        searchIdData(query)
+    useEffect(() => {   
+        searchIdData(slug)
 
-    }, [])
+    }, [asPath])
 
     return(
         <Container>
-            <Header/>
-        
+            <Header/>  
 
            {
                getTesteSearch.map(({id, name}:any)=>{

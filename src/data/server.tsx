@@ -5,6 +5,9 @@ export function Data(){
 
   createServer({
     routes(){
+      this.passthrough((request) => {
+        if (request.url === "/_next/static/development/_devPagesManifest.json") return true;
+      });
       this.namespace = 'api';
   
       this.get('/products', () => (
@@ -412,7 +415,11 @@ export function Data(){
         ]
         }
       ))
-    }
+      
+      this . namespace  =  "" 
+
+      this.passthrough()
+    } 
   })  
 }
 
