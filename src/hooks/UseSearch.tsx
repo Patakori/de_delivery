@@ -30,11 +30,11 @@ export const ContextSearch = createContext({})
 
 export function UseSearchProvider({children}:ContextProviderProps){
 
+
     const [getSearch, setGetSearch] = useState('')
     const [respSearch, setRespSearch] = useState<PropsProducts[]>([])
     const [isFetching, setIsFetching] = useState(false)
     const [error, setError] = useState<Error | null>(null)
-
 
     async function searchData(){
         setIsFetching(true)

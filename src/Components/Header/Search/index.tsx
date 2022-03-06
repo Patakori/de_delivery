@@ -29,8 +29,10 @@ import {
 
 
 } from "./styles";
+
 import { ContextSearch } from "../../../hooks/UseSearch";
 import { ImSpinner11 } from "react-icons/im";
+import { useRouter } from "next/router";
 
 export interface PropsProductsArray {
     products:{
@@ -71,7 +73,10 @@ export function Search({type}:PropsType){
       setGetSearch,
       respSearch,
       isFetching,
+      
     }:any = useContext(ContextSearch)
+
+    const router = useRouter()
 
     const [modal, setModal] = useState(false)
 
@@ -110,8 +115,10 @@ export function Search({type}:PropsType){
                                   </ContainerFetching>:
                                     respSearch.map(({name, id, price, image}:PropsProducts)=>{
                                         return(
-                                          <ContainerList key={id}>
-                                            
+                                          <ContainerList key={id} 
+                                          onClick={() =>{ 
+                                            router.push(`/product/${id}`)
+                                            }}>                                      
                                             <ConainerListImage>
                                               <Image src={image} alt="img" width={100}  height={100}/>
                                             </ConainerListImage>

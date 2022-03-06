@@ -12,7 +12,7 @@ export interface propsNewModal {
   type?: boolean;
 }
 
-export function CartModal({onClose, children, type}: propsNewModal){
+export function CartModal({onClose, children}: propsNewModal){
 
   const [animation, setAnimation] = useState(false)
 

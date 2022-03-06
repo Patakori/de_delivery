@@ -142,6 +142,8 @@ export const ContainerList = styled.div`
 
     box-shadow: 1px 1px 5px var(--grey);
 
+    cursor: pointer ;
+
 
     
 `

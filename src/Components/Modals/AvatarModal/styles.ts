@@ -30,7 +30,7 @@ export const ContainerInternal = styled.div`
     margin-left: 60px;
     row-gap: 20px;
 
-    position: fixed;
+    position: absolute;
     z-index: 400;
     box-shadow: 2px 3px 5px var(--grey);
 
