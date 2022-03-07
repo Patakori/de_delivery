@@ -3,9 +3,9 @@ import Image from "next/image";
 import {
           Container, 
           ContainerNews,
-          ContainerButton,
           Spin,
           ContainerFetching,
+          CardRouter
           
         } from "./styles";
 
@@ -25,15 +25,18 @@ import ImgNews from "../../assets/news/product-illustration_alert.png"
 
 import { ImSpinner11 } from "react-icons/im"
 import { Category } from "../../Components/Category";
+import { useRouter } from "next/router";
 
 
 export default function Home() {
 
+  const { push } = useRouter()
+
   const { popular, beats, returnable, beer, spirits, wine, noAlcohol, shop, foods, highlights,isFetching } = useCategory<PropsProducts[]>('/api/products')
-  
+
 
   return (
-    <Container>
+    <Container id="#topPAge">
 
       <Header />
 
@@ -51,12 +54,14 @@ export default function Home() {
         {
          popular.slice(0, 5).map(({name, id, image, price}:PropsProducts)=>{
           return(
-            <Card  
-                key={id} 
-                img={<Image src={image} alt="img" width={100}  height={100}/>}
-                product={name}
-                value={price}
-            />
+            <CardRouter onClick={()=>{push(`/product/${id}`)}}>
+              <Card  
+                  key={id} 
+                  img={<Image src={image} alt="img" width={100}  height={100}/>}
+                  product={name}
+                  value={price}
+              />
+            </CardRouter>
           )
         })
         }
@@ -83,12 +88,14 @@ export default function Home() {
         {
             beats.map(({name, id, image, price}:PropsProducts)=>{
               return(
+              <CardRouter onClick={()=>{push(`/product/${id}`)}}>
                 <Card  
                     key={id} 
                     img={<Image src={image} alt="img" width={100}  height={100}/>}
                     product={name}
                     value={price}
                 />
+              </CardRouter>
               )
             })
           }
@@ -106,12 +113,14 @@ export default function Home() {
         {
           returnable.map(({name, id, image, price}:PropsProducts)=>{
             return(
+            <CardRouter onClick={()=>{push(`/product/${id}`)}}>
               <Card  
                   key={id} 
                   img={<Image src={image} alt="img" width={100}  height={100}/>}
                   product={name}
                   value={price}
               />
+            </CardRouter>
             )
           })
         }
@@ -155,12 +164,14 @@ export default function Home() {
         {
           beer.map(({name, id, image, price}:PropsProducts)=>{
             return(
+            <CardRouter onClick={()=>{push(`/product/${id}`)}}>
               <Card  
                   key={id} 
                   img={<Image src={image} alt="img" width={100}  height={100}/>}
                   product={name}
                   value={price}
               />
+            </CardRouter>
             )
           })
         }
@@ -177,12 +188,14 @@ export default function Home() {
         {
           spirits.map(({name, id, image, price}:PropsProducts)=>{
             return(
+            <CardRouter onClick={()=>{push(`/product/${id}`)}}>
               <Card  
                   key={id} 
                   img={<Image src={image} alt="img" width={100}  height={100}/>}
                   product={name}
                   value={price}
               />
+            </CardRouter>
             )
           })
         }
@@ -199,12 +212,14 @@ export default function Home() {
         {
           wine.map(({name, id, image, price}:PropsProducts)=>{
             return(
+            <CardRouter onClick={()=>{push(`/product/${id}`)}}>
               <Card  
                   key={id} 
                   img={<Image src={image} alt="img" width={100}  height={100}/>}
                   product={name}
                   value={price}
               />
+            </CardRouter>
             )
           })
         }
@@ -221,12 +236,14 @@ export default function Home() {
         {
           noAlcohol.map(({name, id, image, price}:PropsProducts)=>{
             return(
+            <CardRouter onClick={()=>{push(`/product/${id}`)}}>
               <Card  
                   key={id} 
                   img={<Image src={image} alt="img" width={100}  height={100}/>}
                   product={name}
                   value={price}
               />
+            </CardRouter>
             )
           })
         }
@@ -243,12 +260,14 @@ export default function Home() {
         {
           shop.map(({name, id, image, price}:PropsProducts)=>{
             return(
+            <CardRouter onClick={()=>{push(`/product/${id}`)}}>
               <Card  
                   key={id} 
                   img={<Image src={image} alt="img" width={100}  height={100}/>}
                   product={name}
                   value={price}
               />
+            </CardRouter>
             )
           })
         }
@@ -265,21 +284,19 @@ export default function Home() {
         {
           foods.map(({name, id, image, price}:PropsProducts)=>{
             return(
+            <CardRouter onClick={()=>{push(`/product/${id}`)}}>
               <Card  
                   key={id} 
                   img={<Image src={image} alt="img" width={100}  height={100}/>}
                   product={name}
                   value={price}
               />
+            </CardRouter>
             )
           })
         }
 
       </Categorys>
-
-      <ContainerButton>
-          Voltar ao topo
-      </ContainerButton>
 
       <Footer/>
 

@@ -68,23 +68,7 @@ export const ContainerNews = styled.div`
     }
 
 `
-export const ContainerButton = styled.button`
-    background-color: var(--grey-100);
-    display: flex;
 
-    align-items: center;
-    justify-content: center;
-
-    color: var(--white);
-    font-size: 1rem;
-    font-weight: bold;
-    border-style: none;
-
-    width: 100%;
-    height: 56px;
-
-    margin-bottom: -10px;
-`
 
 export const Spin = styled.div`
     display: flex;
@@ -113,4 +97,10 @@ export const ContainerFetching = styled.div`
 
     column-gap: 10px;
 
+`
+
+export const CardRouter = styled.div`
+    display: flex;
+
+    cursor: pointer;
 `

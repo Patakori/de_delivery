@@ -7,7 +7,8 @@ import {
         ContainerAboutDelivery,
         Containerpartnership,
         ContainerPolitics,
-        ContainerInfos
+        ContainerInfos,
+        ContainerButton
 
         } from "./styles";
 
@@ -19,8 +20,17 @@ import Image from 'next/image';
 
 
 export function Footer(){
+
+    const scrollTop = function() {
+        window.scrollTo(0, 0);
+    };
+
     return(
         <Container>
+            
+            <ContainerButton onClick={scrollTop}>
+                Voltar ao topo
+            </ContainerButton>
             <ContainerInfos>
                 <ContaierIcons>
                     <span><BsTwitter fontSize={20} color='#fff'/></span>
@@ -51,6 +61,8 @@ export function Footer(){
                 <a href=''>Termos de uso</a>
                 <a href=''>Política de privacidade</a>
             </ContainerPolitics>
+
+
 
         </Container>
     )

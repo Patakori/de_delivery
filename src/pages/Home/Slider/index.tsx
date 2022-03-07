@@ -1,5 +1,5 @@
 
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+import { Navigation, Pagination, Scrollbar, A11y, Autoplay  } from 'swiper';
 
 import Image from "next/image"
 import imgSlider from "../../../assets/slider/banner01.jpg"
@@ -27,9 +27,8 @@ export function Slider (){
     return(
         <Container>
             <Swiper
-                modules={[Navigation, Pagination, Scrollbar, A11y]}
+                modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
                 slidesPerView={1}
-                
                 pagination={{ clickable: true }}
                 autoplay={{
                     delay: 4000,
@@ -44,10 +43,7 @@ export function Slider (){
                             <ContainerSlider>
                                 <Image src={image} 
                                     alt="img" 
-                                    //width={900}  
-                                    //height={900}
-                                    layout="fill"            
-                                    
+                                    layout="fill"                                              
                                     objectPosition='container'
                                 />
                             </ContainerSlider>

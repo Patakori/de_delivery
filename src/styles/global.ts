@@ -106,7 +106,4 @@ button {
   //    height:8px;
   //  }
   //}
-
-  // Background Modals
-
 `

@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 import Image from "next/image";
 
@@ -76,10 +76,11 @@ export function Search({type}:PropsType){
       
     }:any = useContext(ContextSearch)
 
-    const router = useRouter()
+    const { push, asPath} = useRouter()
 
     const [modal, setModal] = useState(false)
-
+    const [searcActive, setSearcActive] = useState(false)
+    
     function handleOpenModal(){
         setModal(true)
         setGetSearch('')
@@ -87,6 +88,7 @@ export function Search({type}:PropsType){
       
       function handleCloseModal(){
         setModal(false)
+        setGetSearch('')
       }
 
     return(
@@ -116,11 +118,15 @@ export function Search({type}:PropsType){
                                     respSearch.map(({name, id, price, image}:PropsProducts)=>{
                                         return(
                                           <ContainerList key={id} 
-                                          href={`/product/${id}`}
+                                         
                                           onClick={() =>{                             
-                                             router.push('href')
+                                             push(`/product/${id}`)
+                                             setGetSearch('')
+                                             if(asPath !== "/")
+                                             setModal(false)
                                             }}
-                                            >                                      
+                                            >
+                                            
                                             <ConainerListImage>
                                               <Image src={image} alt="img" width={100}  height={100}/>
                                             </ConainerListImage>
@@ -136,19 +142,22 @@ export function Search({type}:PropsType){
                                   }
                                 
                              </ContainerExternalList>
-                             <ContainerButtons>
-                                <div>
-                                    <ButtonCategorys name="Cervejas" icon={<IoMdBeer color="#eba417" fontSize={15}/>}/>
-                                    <ButtonCategorys name="Vinhos" icon={<IoIosWine color="#eba417" fontSize={20} />}/>
-                                    <ButtonCategorys name="Lojinha" icon={<BsFillBasket2Fill color="#eba417" fontSize={15} />}/> 
-                                    
-                                </div>
-                                <div>
-                                    <ButtonCategorys name="Destilados" icon={<IoMdWine color="#eba417" fontSize={15} />}/>          
-                                    <ButtonCategorys name="Sem Álcool" icon={<BsCupStraw color="#eba417" fontSize={15} />}/>
-                                    <ButtonCategorys name="Comidinhas" icon={<MdFastfood color="#eba417" fontSize={15} />}/>
-                                </div>
-                             </ContainerButtons>
+                                {
+                                  getSearch === '' ? 
+                                    <ContainerButtons>
+                                    <div>
+                                        <ButtonCategorys name="Cervejas" icon={<IoMdBeer color="#eba417" fontSize={15}/>}/>
+                                        <ButtonCategorys name="Vinhos" icon={<IoIosWine color="#eba417" fontSize={20} />}/>
+                                        <ButtonCategorys name="Lojinha" icon={<BsFillBasket2Fill color="#eba417" fontSize={15} />}/> 
+                                        
+                                    </div>
+                                    <div>
+                                        <ButtonCategorys name="Destilados" icon={<IoMdWine color="#eba417" fontSize={15} />}/>          
+                                        <ButtonCategorys name="Sem Álcool" icon={<BsCupStraw color="#eba417" fontSize={15} />}/>
+                                        <ButtonCategorys name="Comidinhas" icon={<MdFastfood color="#eba417" fontSize={15} />}/>
+                                    </div>
+                                </ContainerButtons>: null
+                                }
 
                          </ContainerCategory>
              

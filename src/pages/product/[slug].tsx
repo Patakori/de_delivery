@@ -1,13 +1,15 @@
 
-import dynamic from 'next/dynamic';
-import Router from 'next/router';
 import { useRouter } from 'next/router';
-import { useContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { Header } from '../../Components/Header';
 
-import { ContextSearch, PropsProducts } from "../../hooks/UseSearch";
+import { PropsProducts } from "../../hooks/UseSearch";
 import { apiAxios } from '../../services/axios';
+
+import { HiOutlineArrowNarrowLeft } from 'react-icons/hi'
+import { IoMdArrowDropright } from 'react-icons/io'
+import { RiAddFill, RiSubtractFill } from 'react-icons/ri'
 
 import { 
     Container,
@@ -34,10 +36,12 @@ import {
     ContainerMap,
 
  } from './styles';
+import Image from 'next/image';
+import { Footer } from '../../Components/Footer';
 
 export default function product(){
     
-    const { query : {slug}, asPath} = useRouter();
+    const { query : {slug}, asPath, push} = useRouter();
  
     const [getTesteSearch, setGetTesteSearch] = useState<PropsProducts[]>([])
 
@@ -48,7 +52,9 @@ export default function product(){
         }).flat().filter((products:any)=>{
             return products.id === id
         }) 
-        ))} 
+    ))} 
+
+
 
 
     useEffect(() => {   
@@ -61,37 +67,44 @@ export default function product(){
             <Header/>  
 
            {
-               getTesteSearch.map(({id, name}:any)=>{
+               getTesteSearch.map(({id, name, image, price}:any)=>{
                    return(
                     <ContainerMap>
-                            <ContainerRoutes>
-                                
-                                <ContainerPath>Página Inicial {name} </ContainerPath>
-                                <ContainerBack>Voltar {id} </ContainerBack>
+                            <ContainerRoutes>                               
+                                <ContainerPath> Página Inicial <IoMdArrowDropright size={15}/> {name} </ContainerPath>
+                                <ContainerBack onClick={()=>{push('/')}}> <HiOutlineArrowNarrowLeft size={25}/> VOLTAR</ContainerBack>
                             </ContainerRoutes>
                 
                             <ContainerProduct>
-                                <ContainerImage></ContainerImage>
+                                <ContainerImage> 
+                                    <Image src={image} 
+                                            alt="img" 
+                                            width={500}  
+                                            height={100}                                                                                        
+                                            objectFit={'contain'}
+                                            
+                                            
+                                /> </ContainerImage>
                 
-                                <Containerinfo>
-                                    <ContainerName></ContainerName>
-                                    <ContainerPrice></ContainerPrice>
-                                </Containerinfo>
                 
                                 <ContainerAmount>
+                                    <Containerinfo>
+                                        <ContainerName> {name} </ContainerName>
+                                        <ContainerPrice> R$ {price} </ContainerPrice>
+                                    </Containerinfo>
                                     <ContainerOne>
-                                        <Containersubtract></Containersubtract>
-                                        <ContainerTotalAmount></ContainerTotalAmount>
-                                        <ContainerSum></ContainerSum>
+                                        <Containersubtract> <RiSubtractFill size={25} color="#333333" /> </Containersubtract>
+                                        <ContainerTotalAmount> 01 </ContainerTotalAmount>
+                                        <ContainerSum><RiAddFill size={25} color="#eba417"/></ContainerSum>
                                     </ContainerOne>
                                     <ContainerOthersAmount>
-                                        <ContainerSix></ContainerSix>
-                                        <ContainerTen></ContainerTen>
-                                        <ContainerFifteen></ContainerFifteen>
+                                        <ContainerSix>+ 6 un.</ContainerSix>
+                                        <ContainerTen>+ 10 un.</ContainerTen>
+                                        <ContainerFifteen>+ 15 un.</ContainerFifteen>
                                     </ContainerOthersAmount>
                                     <ContainerAddCar>
-                                        <ContainerAmountAdd></ContainerAmountAdd>
-                                        <ContainerPriceAdd></ContainerPriceAdd>
+                                        <ContainerAmountAdd>ADICIONAR (1)</ContainerAmountAdd>
+                                        <ContainerPriceAdd>R$ {price}</ContainerPriceAdd>
                                     </ContainerAddCar>
                                 </ContainerAmount>
                 
@@ -100,7 +113,7 @@ export default function product(){
                    )
                })
            }
-
+            <Footer/>
         </Container>
     )
 }

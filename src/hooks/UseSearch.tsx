@@ -36,6 +36,7 @@ export function UseSearchProvider({children}:ContextProviderProps){
     const [isFetching, setIsFetching] = useState(false)
     const [error, setError] = useState<Error | null>(null)
 
+
     async function searchData(){
         setIsFetching(true)
         apiAxios.get('/api/products')

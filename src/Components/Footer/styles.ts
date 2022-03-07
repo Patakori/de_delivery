@@ -13,6 +13,26 @@ export const Container = styled.div`
     
 `
 
+export const ContainerButton = styled.span`
+    background-color: var(--grey-100);
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: var(--white);
+    font-size: 1rem;
+    font-weight: bold;
+    border-style: none;
+
+    width: 100%;
+    height: 56px;
+
+    margin-bottom: -10px;
+
+    cursor: pointer;
+`
+
 export const ContaierIcons = styled.span`
     display: flex;
     justify-content: space-between;
@@ -147,3 +167,4 @@ export const ContainerInfos = styled.div`
         }   
 
 `
+

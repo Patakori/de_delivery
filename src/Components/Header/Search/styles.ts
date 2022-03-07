@@ -49,7 +49,7 @@ export const Container = styled.div`
     }
 
 `
-export const ContainerButtonSearch = styled.button`
+export const ContainerButtonSearch = styled.div`
         display: flex;
         flex-direction: row;
 
@@ -70,6 +70,7 @@ export const ContainerButtonSearch = styled.button`
 
 export const ContainerSearch = styled.div`
     display: flex;
+    width:100%;
     flex-direction: row;
     margin-bottom: 8px;
 `
@@ -88,7 +89,7 @@ export const ContainerCategory = styled.div`
 export const ContainerButtons = styled.div`
         display: flex;
         flex-direction: row;
-
+        height: 100% ;
         width: 100%;
         column-gap: 8px;
 
@@ -111,7 +112,9 @@ export const ContainerExternalList = styled.div<Props>`
 
     height: 100%;
     max-height: 415px;
-    width: 100%;
+    width: 300px;
+    
+
     
     padding: 0px 10px;
 
@@ -126,13 +129,18 @@ export const ContainerExternalList = styled.div<Props>`
 
     overflow-y: auto;
     white-space: pre-line;
+
+    @media (min-width: 760px) {
+        width: 100%;
+        }
   
 `
 
-export const ContainerList = styled.a`
+export const ContainerList = styled.div`
     display: flex;
     width: 100%;
     height: 66px;
+
 
     background-color: white;
 
@@ -144,8 +152,6 @@ export const ContainerList = styled.a`
 
     cursor: pointer ;
 
-
-    
 `
 
 export const ConainerListImage = styled.div`
@@ -153,6 +159,7 @@ export const ConainerListImage = styled.div`
     padding-top: 5px;
     width: 60px;
     height: 60px;
+
 `
 
 export const ConatinerListInfo = styled.div`
@@ -164,6 +171,7 @@ export const ConatinerListInfo = styled.div`
 
     margin-left: 10px;
     row-gap: 5px;
+
 `
 
 export const ContainerListName = styled.div`
@@ -177,6 +185,7 @@ export const ContainerListName = styled.div`
 export const ContainerListPrice = styled.div`
     display: flex;
     font-weight: bold;
+    
 `
 
 
