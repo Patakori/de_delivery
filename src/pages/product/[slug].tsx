@@ -54,20 +54,29 @@ export default function product(){
         }) 
     ))} 
 
-
-
-
     useEffect(() => {   
         searchIdData(slug)
+        setAmount(1)
 
     }, [asPath])
 
+    const [amount, setAmount] = useState(1)
+
+    function handleCount(valor:any){
+        setAmount(amount + valor)
+     }
+    
     return(
         <Container>
             <Header/>  
 
            {
                getTesteSearch.map(({id, name, image, price}:any)=>{
+
+                    const totalStrig = price.replace("," , ".");
+                    const totalConvert = (Number(totalStrig) * amount).toFixed(2)
+                    const total = totalConvert.replace("." , ",");
+                
                    return(
                     <ContainerMap>
                             <ContainerRoutes>                               
@@ -79,12 +88,11 @@ export default function product(){
                                 <ContainerImage> 
                                     <Image src={image} 
                                             alt="img" 
-                                            width={500}  
+                                            width={400}  
                                             height={100}                                                                                        
                                             objectFit={'contain'}
-                                            
-                                            
-                                /> </ContainerImage>
+                                    /> 
+                                </ContainerImage>
                 
                 
                                 <ContainerAmount>
@@ -93,18 +101,18 @@ export default function product(){
                                         <ContainerPrice> R$ {price} </ContainerPrice>
                                     </Containerinfo>
                                     <ContainerOne>
-                                        <Containersubtract> <RiSubtractFill size={25} color="#333333" /> </Containersubtract>
-                                        <ContainerTotalAmount> 01 </ContainerTotalAmount>
-                                        <ContainerSum><RiAddFill size={25} color="#eba417"/></ContainerSum>
+                                        <Containersubtract onClick={() => handleCount(-1)} > <RiSubtractFill size={25} color="#333333" /> </Containersubtract>
+                                        <ContainerTotalAmount> {amount} </ContainerTotalAmount>
+                                        <ContainerSum onClick={() => handleCount(1)} ><RiAddFill size={25} color="#eba417"/></ContainerSum>
                                     </ContainerOne>
                                     <ContainerOthersAmount>
-                                        <ContainerSix>+ 6 un.</ContainerSix>
-                                        <ContainerTen>+ 10 un.</ContainerTen>
-                                        <ContainerFifteen>+ 15 un.</ContainerFifteen>
+                                        <ContainerSix onClick={() => handleCount(6)} >+ 6 un.</ContainerSix>
+                                        <ContainerTen onClick={() => handleCount(10)} >+ 10 un.</ContainerTen>
+                                        <ContainerFifteen onClick={() => handleCount(15)} >+ 15 un.</ContainerFifteen>
                                     </ContainerOthersAmount>
                                     <ContainerAddCar>
-                                        <ContainerAmountAdd>ADICIONAR (1)</ContainerAmountAdd>
-                                        <ContainerPriceAdd>R$ {price}</ContainerPriceAdd>
+                                        <ContainerAmountAdd>ADICIONAR ({amount})</ContainerAmountAdd>
+                                        <ContainerPriceAdd>R$ { total }</ContainerPriceAdd>
                                     </ContainerAddCar>
                                 </ContainerAmount>
                 

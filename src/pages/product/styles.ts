@@ -4,17 +4,21 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
 
+    align-items: center;
+
     width: 100%;
 `
 
 export const ContainerMap = styled.div`
     display: flex;
     flex-direction: column;
+    width: 100%;
 
     margin-bottom: 24px;
 
-    @media (min-width: 1100px) {
-        margin: 0px 116px;
+    @media (min-width: 830px) {
+        max-width: 1160px;
+        
         
     }
 `
@@ -47,18 +51,25 @@ export const ContainerBack = styled.p`
 
     font-weight: bold;
     color: var(--black);
+
+    @media (min-width: 830px) {
+       font-size: .8rem;
+    }
 `
 export const ContainerProduct = styled.div`
     display: flex;
     flex-direction: column;
     padding-bottom: 24px;
 
-    background-color: white;
+    border-radius: 20px;
 
-    @media (min-width: 1100px) {
+    background-color: #FEFEFE;
+    margin-bottom: 40px;
+
+    @media (min-width: 830px) {
         flex-direction: row ;
-        justify-content: center ;
-        column-gap: 100px;
+        justify-content: center ;     
+        padding-bottom: 0px;
         
     }
 `
@@ -69,16 +80,34 @@ export const ContainerImage = styled.div`
     height: 233px;
     padding: 10px 0px;
 
-    @media (min-width: 1100px) {
-        flex-direction: row ;
-        height: 505px;
+    @media (min-width: 830px) {      
+        height: 460px;  
+           
+    }
 
-       
+    @media (min-width: 1000px) {
+        flex-direction: row ;
+        height: 460px;  
+        padding: 2rem;
         
     }
     
 
 `
+
+export const ContainerAmount = styled.div`
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: 830px) {
+        margin-top: 25px;
+        width: 100%;
+        max-width: 400px;
+
+    }
+
+`
+
 export const Containerinfo = styled.div`
     display: flex;
     flex-direction: column;
@@ -94,17 +123,17 @@ export const ContainerName = styled.p`
     display: flex;
     font-weight: bold;
 
+    @media (min-width: 830px) {
+        font-size: 2rem;
+    }
+
 `
 export const ContainerPrice = styled.p`
     display: flex;
     font-weight: 500 ;
 
 `
-export const ContainerAmount = styled.div`
-    display: flex;
-    flex-direction: column;
 
-`
 export const ContainerOne = styled.div`
     display: flex;
     align-items: center;
@@ -140,15 +169,24 @@ export const ContainerSum = styled.button`
 `
 export const ContainerOthersAmount = styled.div`
     display: flex;
-    justify-content: space-between;
 
     margin: 10px 15px;
+    justify-content: center;
+    column-gap: 10px;
+
+    @media (min-width: 830px) {
+        padding: 0px;
+    }
 
 `
 export const ContainerSix = styled.button`
     display: flex;
     text-decoration: none;
     background-color: white ;
+
+    width: 100%;
+    align-items: center;
+    justify-content: center;
 
     border: solid 1px var(--white-50);
     border-radius: 8px;
@@ -160,6 +198,10 @@ export const ContainerTen = styled.button`
     text-decoration: none;
     background-color: white ;
 
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+
     border: solid 1px var(--white-50);
     border-radius: 8px;
     padding: 8px 25px;
@@ -169,6 +211,10 @@ export const ContainerFifteen = styled.button`
     display: flex;
     text-decoration: none;
     background-color: white ;
+
+    width: 100%;
+    align-items: center;
+    justify-content: center;
 
     border: solid 1px var(--white-50);
     border-radius: 8px;
